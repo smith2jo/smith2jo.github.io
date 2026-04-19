@@ -16,7 +16,7 @@
       --light:  #BBCE4;
       --muted:  #7EABCC;
       --gray:   #4A5568;
-      --lgray:  #71B096;
+      --lgray:  #718096;
       --bg:     #F7F9FC;
       --white:  #FFFFFF;
       --rule:   #E2EAF4;
@@ -115,7 +115,6 @@
       flex-direction: column;
       justify-content: flex-end;
     }
-    /* Belt surface */
     .belt-surface {
       height: 18px;
       background: repeating-linear-gradient(
@@ -129,7 +128,7 @@
       animation: beltMove 1.2s linear infinite;
     }
     @keyframes beltMove {
-      0%  { background-position: 0 0; }
+      0%   { background-position: 0 0; }
       100% { background-position: 42px 0; }
     }
     .belt-rollers {
@@ -140,7 +139,6 @@
           #142840 18px, #142840 22px
         );
     }
-    /* Package track */
     .packages-track {
       position: absolute;
       bottom: 28px;
@@ -163,9 +161,7 @@
     .pkg-box {
       width: 38px; height: 34px;
       background: linear-gradient(160deg, #c8a87a 0%, #a07840 100%);
-      border-color: #7a5a28;
-      border-width: 1px;
-      border-style: solid;
+      border: 1px solid #7a5a28;
       border-radius: 2px;
       position: relative;
     }
@@ -185,7 +181,7 @@
       background: rgba(0,0,0,0.15);
       transform: translateY(-50%);
     }
-    .pkg-tall .pkg-box { height: 46px; background: linear-gradient(160deg, #5b8dd9 0%, #3a6ab0 100%); border-color: #3a6a3a; }
+    .pkg-tall .pkg-box { height: 46px; background: linear-gradient(160deg, #5b8dd9 0%, #3a6ab0 100%); border-color: #2a5a90; }
     .pkg-wide .pkg-box { width: 64px; height: 28px; background: linear-gradient(160deg, #6dab6d 0%, #4a8a4a 100%); border-color: #3a6a3a; }
     .pkg-label {
       position: absolute;
@@ -194,7 +190,6 @@
       background: rgba(255,255,255,0.25);
       border-radius: 1px;
     }
-    /* Forklift icon on the right */
     .forklift-icon {
       position: absolute;
       right: 24px;
@@ -208,7 +203,6 @@
       0%, 100% { transform: translateY(0); }
       50%       { transform: translateY(-4px); }
     }
-    /* Scanline blip */
     .scan-line {
       position: absolute;
       top: 0; bottom: 28px;
@@ -223,10 +217,7 @@
     }
 
     /* --- STATS BAR --- */
-    .stats-bar {
-      background: var(--navy);
-      padding: 0;
-    }
+    .stats-bar { background: var(--navy); padding: 0; }
     .stats-inner {
       max-width: 1100px;
       margin: 0 auto;
@@ -234,16 +225,11 @@
       justify-content: space-around;
       flex-wrap: wrap;
     }
-    .stat-item {
-      text-align: center;
-      padding: 28px 20px;
-      flex: 1;
-      min-width: 140px;
-    }
+    .stat-item { text-align: center; padding: 28px 20px; flex: 1; min-width: 140px; }
     .stat-num { font-size: 30px; font-weight: 800; color: var(--white); line-height: 1; margin-bottom: 6px; }
     .stat-label { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
 
-    /* --- ACHIEVEMENTS / IMPACT --- */
+    /* --- ACHIEVEMENTS --- */
     .achievements { background: var(--bg); }
     .ach-grid {
       display: grid;
@@ -270,7 +256,7 @@
 
     /* --- EXPERIENCE --- */
     .experience { background: var(--bg); padding: 64px 2rem; }
-    .exp-list { display: flex; flex-direction: colum; gap: 0; }
+    .exp-list { display: flex; flex-direction: column; gap: 0; }
     .exp-item { display: flex; gap: 32px; padding: 32px 0; border-bottom: 1px solid var(--rule); }
     .exp-item:last-child { border-bottom: none; }
     .exp-meta { min-width: 180px; }
@@ -347,47 +333,43 @@
       <h1>Jordan Smith III</h1>
       <p class="hero-sub">VP of Engineering &amp; Operations &nbsp;&middot;&nbsp; $1.5B+ MHE Capital Portfolio</p>
       <div class="cred-row">
-          <span class="pill">PE</span><span>
-          </span><span class="pill">PMP</span><span>
-          </span><span class="pill">MBA</span><span>
-          </span><span class="pill">Cornell Executive Leadership</span><span></span>
+        <span class="pill">PE</span>
+        <span class="pill">PMP</span>
+        <span class="pill">MBA</span>
+        <span class="pill">Cornell Executive Leadership</span>
       </div>
       <div class="hero-btns">
-          <a href="#contact" class="btn-primary">Get in Touch</a>
-          <a href="Jordan_Smith_III_Executive_Brief.docx" download class="btn-outline">Download Executive Brief</a>
+        <a href="#contact" class="btn-primary">Get in Touch</a>
+        <a href="Jordan_Smith_III_Executive_Brief.docx" download class="btn-outline">Download Executive Brief</a>
       </div>
 
       <!-- CONVEYOR ANIMATION -->
       <div class="conveyor-wrapper">
         <div class="conveyor-belt">
-          <!-- Package tracks -->
           <div class="packages-track">
-              <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
-              <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
           </div>
-          <!-- Scan line -->
           <div class="scan-line"></div>
-          <!-- Forklift -->
           <div class="forklift-icon">&#x1F69C;</div>
-          <!-- Belt -->
           <div class="belt-surface"></div>
           <div class="belt-rollers"></div>
         </div>
@@ -398,26 +380,26 @@
   <!-- STATS BAR -->
   <div class="stats-bar">
     <div class="stats-inner">
-        <div class="stat-item">
-          <span class="stat-num">$1.5B+</span><span>
-          </span><span class="stat-label">MHE Capital Portfolio</span><span></span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">291</span><span>
-          </span><span class="stat-label">Facilities</span><span></span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">$2B+</span><span>
-          </span><span class="stat-label">Annual Throughput</span><span></span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">17 Yrs</span><span>
-          </span><span class="stat-label">Engineering Leadership</span><span></span>
-        </div>
+      <div class="stat-item">
+        <span class="stat-num">$1.5B+</span>
+        <span class="stat-label">MHE Capital Portfolio</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">291</span>
+        <span class="stat-label">Facilities</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">$2B+</span>
+        <span class="stat-label">Annual Throughput</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">17 Yrs</span>
+        <span class="stat-label">Engineering Leadership</span>
+      </div>
     </div>
   </div>
 
-  <!-- IMPACT METRICS (moved above About) -->
+  <!-- IMPACT METRICS -->
   <section class="achievements" id="achievements">
     <div class="section-inner">
       <p class="section-label">Proven Impact</p>
@@ -425,41 +407,41 @@
       <div class="section-rule"></div>
       <div class="ach-grid">
 
-          <div class="ach-card">
-            <div class="ach-number">$2.7M</div>
-            <div class="ach-title">Vendor Accountability</div>
-            <div class="ach-desc">Built and institutionalized a supplier performance management program across 270+ facilities. Drove a 70% reduction in repeat vendor failures, delivering $2.7M in projected annual savings and establishing lasting contractual accountability standards.</div>
-          </div>
+        <div class="ach-card">
+          <div class="ach-number">$2.7M</div>
+          <div class="ach-title">Vendor Accountability</div>
+          <div class="ach-desc">Built and institutionalized a supplier performance management program across 270+ facilities. Drove a 70% reduction in repeat vendor failures, delivering $2.7M in projected annual savings and establishing lasting contractual accountability standards.</div>
+        </div>
 
-          <div class="ach-card">
-            <div class="ach-number">91%</div>
-            <div class="ach-title">On-Time Delivery</div>
-            <div class="ach-desc">Led simultaneous execution of an 11-site capital launch portfolio valued at $18M+, elevating regional on-time delivery from 85% to 91% &mdash; including a greenfield flagship facility at $264M with no established operational playbook.</div>
-          </div>
+        <div class="ach-card">
+          <div class="ach-number">91%</div>
+          <div class="ach-title">On-Time Delivery</div>
+          <div class="ach-desc">Directed simultaneous execution of an 11-site capital launch portfolio valued at $18M+, elevating regional on-time delivery from 85% to 91% &mdash; including a greenfield flagship facility at $264M with no established operational playbook.</div>
+        </div>
 
-          <div class="ach-card">
-            <div class="ach-number">$45M+</div>
-            <div class="ach-title">Cost Avoidance</div>
-            <div class="ach-desc">Identified and corrected a systemic engineering design assumption through rigorous empirical validation. Rewrote specifications that generated $9M in immediate savings and $36M+ in projected cost avoidance across future capital programs.</div>
-          </div>
+        <div class="ach-card">
+          <div class="ach-number">$45M+</div>
+          <div class="ach-title">Cost Avoidance</div>
+          <div class="ach-desc">Identified and corrected a systemic engineering design assumption through rigorous empirical validation. Rewrote specifications that generated $9M in immediate savings and $36M+ in projected cost avoidance across future capital programs.</div>
+        </div>
 
-          <div class="ach-card">
-            <div class="ach-number">15 Sites</div>
-            <div class="ach-title">Performance Turnaround</div>
-            <div class="ach-desc">Designed and deployed a regional performance recovery framework targeting underperforming automated fulfillment operations. Achieved measurable throughput improvement across 15 sites, with all locations exceeding targets by 5% or more within 90 days.</div>
-          </div>
+        <div class="ach-card">
+          <div class="ach-number">15 Sites</div>
+          <div class="ach-title">Performance Turnaround</div>
+          <div class="ach-desc">Designed and deployed a regional performance recovery framework targeting underperforming automated fulfillment operations. Achieved measurable throughput improvement across all 15 sites, with each location exceeding baseline targets by 5% or more within 90 days.</div>
+        </div>
 
-          <div class="ach-card">
-            <div class="ach-number">100%</div>
-            <div class="ach-title">Operational Excellence Adoption</div>
-            <div class="ach-desc">Architected and scaled a cross-functional launch readiness framework from pilot to full North American adoption. Standardized handoff protocols now govern 300+ active deliverables, reducing launch variability and accelerating time-to-operational-readiness.</div>
-          </div>
+        <div class="ach-card">
+          <div class="ach-number">100%</div>
+          <div class="ach-title">Operational Excellence Adoption</div>
+          <div class="ach-desc">Architected and scaled a cross-functional launch readiness framework from pilot to full North American adoption. Standardized handoff protocols now govern 300+ active deliverables, reducing launch variability and accelerating time-to-operational-readiness.</div>
+        </div>
 
-          <div class="ach-card">
-            <div class="ach-number">10</div>
-            <div class="ach-title">Leaders Promoted</div>
-            <div class="ach-desc">Built high-performance engineering organizations through disciplined hiring, structured development, and intentional succession planning. Drove 10 promotions within 2.5 years with 35% diverse representation, consistently exceeding organizational benchmarks.</div>
-          </div>
+        <div class="ach-card">
+          <div class="ach-number">10</div>
+          <div class="ach-title">Leaders Promoted</div>
+          <div class="ach-desc">Built high-performance engineering organizations through disciplined hiring, structured development, and intentional succession planning. Drove 10 promotions in 2.5 years with 35% diverse representation, consistently exceeding organizational benchmarks.</div>
+        </div>
 
       </div>
     </div>
@@ -486,69 +468,69 @@
       <div class="section-rule"></div>
       <div class="exp-list">
 
-          <div class="exp-item">
-            <div class="exp-meta">
-              <div class="exp-dates">Aug 2025 &ndash; Present</div>
-              <div class="exp-company">Amazon Global Engineering Services &nbsp;&nbsp; Cincinnati, OH</div>
-            </div>
-            <div>
-              <div class="exp-title">Senior Program Manager II, Tiger Team</div>
-              <div class="exp-desc">Lead cross-functional Tiger Team engineering organization addressing systemic performance failures in Amazon's highest-complexity fulfillment facilities. Direct accountability for $3.5M OPEX and influence across $1B+ capital programs. Drive strategy across 50+ internal organizations.</div>
-              <div class="exp-wins">
-                <span class="win-tag">$1.5B+ Capital Portfolio</span>
-                <span class="win-tag">Tiger Team Lead</span>
-                <span class="win-tag">50+ Organizations</span>
-              </div>
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-dates">Aug 2025 &ndash; Present</div>
+            <div class="exp-company">Amazon Global Engineering Services &nbsp;&nbsp; Cincinnati, OH</div>
+          </div>
+          <div>
+            <div class="exp-title">Senior Program Manager II, Tiger Team</div>
+            <div class="exp-desc">Lead cross-functional Tiger Team engineering organization addressing systemic performance failures in Amazon's highest-complexity fulfillment facilities. Direct accountability for $3.5M OPEX and influence across $1B+ capital programs. Drive strategy across 50+ internal organizations.</div>
+            <div class="exp-wins">
+              <span class="win-tag">$1.5B+ Capital Portfolio</span>
+              <span class="win-tag">Tiger Team Lead</span>
+              <span class="win-tag">50+ Organizations</span>
             </div>
           </div>
+        </div>
 
-          <div class="exp-item">
-            <div class="exp-meta">
-              <div class="exp-dates">2022 &ndash; Aug 2025</div>
-              <div class="exp-company">Amazon &nbsp;&nbsp; Multiple Sites</div>
-            </div>
-            <div>
-              <div class="exp-title">Senior Program Manager, Launch &amp; Expansion</div>
-              <div class="exp-desc">Directed simultaneous launch of 11 capital facilities ($18M+ portfolio), establishing regional on-time delivery benchmarks. Led greenfield $264M flagship launch with no prior operational playbook. Built supplier accountability program eliminating $2.7M in repeat failure costs.</div>
-              <div class="exp-wins">
-                <span class="win-tag">91% On-Time</span>
-                <span class="win-tag">$264M Flagship</span>
-                <span class="win-tag">$2.7M Savings</span>
-              </div>
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-dates">2022 &ndash; Aug 2025</div>
+            <div class="exp-company">Amazon &nbsp;&nbsp; Multiple Sites</div>
+          </div>
+          <div>
+            <div class="exp-title">Senior Program Manager, Launch &amp; Expansion</div>
+            <div class="exp-desc">Directed simultaneous launch of 11 capital facilities ($18M+ portfolio), establishing regional on-time delivery benchmarks. Led greenfield $264M flagship launch with no prior operational playbook. Built supplier accountability program eliminating $2.7M in repeat failure costs.</div>
+            <div class="exp-wins">
+              <span class="win-tag">91% On-Time</span>
+              <span class="win-tag">$264M Flagship</span>
+              <span class="win-tag">$2.7M Savings</span>
             </div>
           </div>
+        </div>
 
-          <div class="exp-item">
-            <div class="exp-meta">
-              <div class="exp-dates">2018 &ndash; 2022</div>
-              <div class="exp-company">Duke Energy &nbsp;&nbsp; Charlotte, NC</div>
-            </div>
-            <div>
-              <div class="exp-title">Capital Project Manager / Engineering Manager</div>
-              <div class="exp-desc">Led 45-person team managing a station's $75M annual budget. Delivered $182M in revenue loss avoidance across parallel capital improvement programs. Managed engineering design validation that generated $9M in immediate savings and $36M+ in long-term cost avoidance.</div>
-              <div class="exp-wins">
-                <span class="win-tag">$75M Budget</span>
-                <span class="win-tag">$182M Avoidance</span>
-                <span class="win-tag">45-Person Team</span>
-              </div>
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-dates">2018 &ndash; 2022</div>
+            <div class="exp-company">Duke Energy &nbsp;&nbsp; Charlotte, NC</div>
+          </div>
+          <div>
+            <div class="exp-title">Capital Project Manager / Engineering Manager</div>
+            <div class="exp-desc">Led 45-person team managing a station's $75M annual budget. Delivered $182M in revenue loss avoidance across parallel capital improvement programs. Managed engineering design validation that generated $9M in immediate savings and $36M+ in long-term cost avoidance.</div>
+            <div class="exp-wins">
+              <span class="win-tag">$75M Budget</span>
+              <span class="win-tag">$182M Avoidance</span>
+              <span class="win-tag">45-Person Team</span>
             </div>
           </div>
+        </div>
 
-          <div class="exp-item">
-            <div class="exp-meta">
-              <div class="exp-dates">2009 &ndash; 2018</div>
-              <div class="exp-company">Various &nbsp;&nbsp; National</div>
-            </div>
-            <div>
-              <div class="exp-title">Engineering Leadership &mdash; Early Career</div>
-              <div class="exp-desc">Progressed through engineering leadership roles in utilities, industrial operations, and infrastructure. Built core competencies in capital project delivery, team development, and operational systems design. PE licensed across multiple states.</div>
-              <div class="exp-wins">
-                <span class="win-tag">PE Licensed</span>
-                <span class="win-tag">Multi-state</span>
-                <span class="win-tag">Capital Delivery</span>
-              </div>
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-dates">2009 &ndash; 2018</div>
+            <div class="exp-company">Various &nbsp;&nbsp; National</div>
+          </div>
+          <div>
+            <div class="exp-title">Engineering Leadership &mdash; Early Career</div>
+            <div class="exp-desc">Progressed through engineering leadership roles in utilities, industrial operations, and infrastructure. Built core competencies in capital project delivery, team development, and operational systems design. PE licensed across multiple states.</div>
+            <div class="exp-wins">
+              <span class="win-tag">PE Licensed</span>
+              <span class="win-tag">Multi-state</span>
+              <span class="win-tag">Capital Delivery</span>
             </div>
           </div>
+        </div>
 
       </div>
     </div>
@@ -586,26 +568,26 @@
       <h2 class="section-title">Education &amp; Certifications</h2>
       <div class="section-rule"></div>
       <div class="cred-grid">
-          <div class="cred-card">
-            <div class="cred-name">Professional Engineer (PE)</div>
-            <div class="cred-org">Licensed &mdash; Multiple States</div>
-          </div>
-          <div class="cred-card">
-            <div class="cred-name">Project Management Professional (PMP)</div>
-            <div class="cred-org">Project Management Institute</div>
-          </div>
-          <div class="cred-card">
-            <div class="cred-name">MBA</div>
-            <div class="cred-org">Business Administration</div>
-          </div>
-          <div class="cred-card">
-            <div class="cred-name">Executive Leadership Program</div>
-            <div class="cred-org">Cornell University</div>
-          </div>
-          <div class="cred-card">
-            <div class="cred-name">B.S. Mechanical Engineering</div>
-            <div class="cred-org">Engineering Foundation</div>
-          </div>
+        <div class="cred-card">
+          <div class="cred-name">Professional Engineer (PE)</div>
+          <div class="cred-org">Licensed &mdash; Multiple States</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-name">Project Management Professional (PMP)</div>
+          <div class="cred-org">Project Management Institute</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-name">MBA</div>
+          <div class="cred-org">Business Administration</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-name">Executive Leadership Program</div>
+          <div class="cred-org">Cornell University</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-name">B.S. Mechanical Engineering</div>
+          <div class="cred-org">Engineering Foundation</div>
+        </div>
       </div>
     </div>
   </section>
@@ -618,23 +600,23 @@
       <div class="section-rule"></div>
       <p class="contact-sub">Targeting VP of Engineering and VP of Operations roles in fulfillment, logistics, industrial automation, and MHE systems integration. Available nationally for remote and hybrid roles. On-site within Greater Cincinnati area.</p>
       <div class="contact-btns">
-          <a href="mailto:jordan.smith.3rd@gmail.com" class="btn-primary">Send an Email</a>
-          <a href="https://www.linkedin.com/in/jordansmith3rd/" target="_blank" class="btn-outline">Connect on LinkedIn</a>
-          <a href="Jordan_Smith_III_Executive_Brief.docx" download class="btn-outline">Download Executive Brief</a>
+        <a href="mailto:jordan.smith.3rd@gmail.com" class="btn-primary">Send an Email</a>
+        <a href="https://www.linkedin.com/in/jordansmith3rd/" target="_blank" class="btn-outline">Connect on LinkedIn</a>
+        <a href="Jordan_Smith_III_Executive_Brief.docx" download class="btn-outline">Download Executive Brief</a>
       </div>
       <div class="contact-details">
-          <div class="contact-item">
-            <strong>Email</strong>
-            jordan.smith.3rd@gmail.com
-          </div>
-          <div class="contact-item">
-            <strong>Location</strong>
-            Cincinnati, OH
-          </div>
-          <div class="contact-item">
-            <strong>Compensation Target</strong>
-            $300K&ndash;$400K with equity
-          </div>
+        <div class="contact-item">
+          <strong>Email</strong>
+          jordan.smith.3rd@gmail.com
+        </div>
+        <div class="contact-item">
+          <strong>Location</strong>
+          Cincinnati, OH
+        </div>
+        <div class="contact-item">
+          <strong>Compensation Target</strong>
+          $300K&ndash;$400K with equity
+        </div>
       </div>
     </div>
   </section>
