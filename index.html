@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jordan Smith III - Engineering executive with $1.5B+ MHE capital portfolio. VP of Engineering and Operations leader targeting fulfillment, logistics, and industrial automation.">
+  <title>Jordan Smith III | VP of Engineering &amp; Operations</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0F2237;
+      --navy2:  #1B3A5C;
+      --accent: #2E75B6;
+      --accent2:#1B5C99;
+      --light:  #BBCE4;
+      --muted:  #7EABCC;
+      --gray:   #4A5568;
+      --lgray:  #718096;
+      --bg:     #F7F9FC;
+      --white:  #FFFFFF;
+      --rule:   #E2EAF4;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--gray);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent2); }
+
+    /* --- NAV --- */
+    nav {
+      background: var(--navy);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-brand { color: var(--white); font-weight: 700; font-size: 17px; letter-spacing: 0.5px; }
+    .nav-links { display: flex; gap: 2rem; }
+    .nav-links a { color: rgba(255,255,255,0.82); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+
+    /* --- SHARED SECTION --- */
+    section { padding: 64px 2rem; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+    .section-title { font-size: 32px; font-weight: 700; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+    .section-rule { width: 48px; height: 3px; background: var(--accent); margin-bottom: 32px; }
+
+    /* --- HERO --- */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+      color: var(--white);
+      padding: 72px 2rem 0;
+      overflow: hidden;
+    }
+    .hero-content { max-width: 1100px; margin: 0 auto; }
+    .hero-eyebrow { font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .hero-content h1 { font-size: 52px; font-weight: 800; line-height: 1.05; margin-bottom: 16px; }
+    .hero-sub { font-size: 18px; color: rgba(255,255,255,0.80); margin-bottom: 24px; }
+    .cred-row { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
+    .pill { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); color: var(--white); font-size: 13px; font-weight: 600; padding: 5px 14px; border-radius: 20px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 32px; }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--accent2); color: var(--white); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 12px 28px;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: 600;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--white); color: var(--white); }
+
+    /* --- CONVEYOR ANIMATION --- */
+    .conveyor-wrapper {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      height: 90px;
+      margin-top: 8px;
+    }
+    .conveyor-belt {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+    .belt-surface {
+      height: 18px;
+      background: repeating-linear-gradient(
+          90deg,
+          #1a3a5c 0px, #1a3a5c 38px,
+          #0d2236 38px, #0d2236 42px
+        );
+      border-top: 3px solid #2E75B6;
+      border-bottom: 2px solid #0a1a2e;
+      position: relative;
+      animation: beltMove 1.2s linear infinite;
+    }
+    @keyframes beltMove {
+      0%   { background-position: 0 0; }
+      100% { background-position: 42px 0; }
+    }
+    .belt-rollers {
+      height: 10px;
+      background: repeating-linear-gradient(
+          90deg,
+          #0a1a2e 0px, #0a1a2e 18px,
+          #142840 18px, #142840 22px
+        );
+    }
+    .packages-track {
+      position: absolute;
+      bottom: 28px;
+      left: 0;
+      width: 200%;
+      display: flex;
+      gap: 22px;
+      animation: pkgScroll 12s linear infinite;
+    }
+    @keyframes pkgScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .pkg {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      flex-shrink: 0;
+    }
+    .pkg-box {
+      width: 38px; height: 34px;
+      background: linear-gradient(160deg, #c8a87a 0%, #a07840 100%);
+      border: 1px solid #7a5a28;
+      border-radius: 2px;
+      position: relative;
+    }
+    .pkg-box::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 2px;
+      background: rgba(0,0,0,0.15);
+      transform: translateX(-50%);
+    }
+    .pkg-box::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 0; right: 0;
+      height: 2px;
+      background: rgba(0,0,0,0.15);
+      transform: translateY(-50%);
+    }
+    .pkg-tall .pkg-box { height: 46px; background: linear-gradient(160deg, #5b8dd9 0%, #3a6ab0 100%); border-color: #2a5a90; }
+    .pkg-wide .pkg-box { width: 64px; height: 28px; background: linear-gradient(160deg, #6dab6d 0%, #4a8a4a 100%); border-color: #3a6a3a; }
+    .pkg-label {
+      position: absolute;
+      top: 4px; left: 4px; right: 4px;
+      height: 8px;
+      background: rgba(255,255,255,0.25);
+      border-radius: 1px;
+    }
+    .forklift-icon {
+      position: absolute;
+      right: 24px;
+      bottom: 28px;
+      font-size: 28px;
+      opacity: 0.55;
+      animation: forkFloat 3s ease-in-out infinite;
+      z-index: 3;
+      line-height: 1;
+    }
+    @keyframes forkFloat {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-4px); }
+    }
+    .scan-line {
+      position: absolute;
+      top: 0; bottom: 28px;
+      width: 2px;
+      background: rgba(46,117,182,0.6);
+      right: 140px;
+      animation: scanPulse 2s ease-in-out infinite;
+    }
+    @keyframes scanPulse {
+      0%, 100% { opacity: 0.3; }
+      50%       { opacity: 1; }
+    }
+
+    /* --- STATS BAR --- */
+    .stats-bar { background: var(--navy); padding: 0; }
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; padding: 28px 20px; flex: 1; min-width: 140px; }
+    .stat-num { font-size: 30px; font-weight: 800; color: var(--white); line-height: 1; margin-bottom: 6px; }
+    .stat-label { font-size: 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* --- ACHIEVEMENTS --- */
+    .achievements { background: var(--bg); }
+    .ach-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .ach-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 28px 24px;
+      border-top: 3px solid var(--accent);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .ach-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(15,34,55,0.10); }
+    .ach-number { font-size: 38px; font-weight: 700; color: var(--navy2); line-height: 1.1; margin-bottom: 6px; }
+    .ach-title { font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+    .ach-desc { font-size: 14px; color: var(--lgray); line-height: 1.6; }
+
+    /* --- ABOUT --- */
+    .about { background: var(--white); padding: 64px 2rem; }
+    .about p { font-size: 17px; line-height: 1.8; color: var(--gray); margin-bottom: 18px; max-width: 720px; }
+    .about p:last-child { margin-bottom: 0; }
+
+    /* --- EXPERIENCE --- */
+    .experience { background: var(--bg); padding: 64px 2rem; }
+    .exp-list { display: flex; flex-direction: column; gap: 0; }
+    .exp-item { display: flex; gap: 32px; padding: 32px 0; border-bottom: 1px solid var(--rule); }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-meta { min-width: 180px; }
+    .exp-dates { font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.5px; }
+    .exp-company { font-size: 13px; color: var(--lgray); margin-top: 4px; }
+    .exp-title { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .exp-desc { font-size: 15px; color: var(--gray); line-height: 1.7; margin-bottom: 10px; }
+    .exp-wins { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .win-tag {
+      background: #EEF3FA;
+      color: var(--navy2);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    /* --- EXPERTISE --- */
+    .expertise { background: var(--navy); padding: 64px 2rem; }
+    .expertise .section-title { color: var(--white); }
+    .expertise .section-label { color: var(--muted); }
+    .expertise .section-rule { background: var(--muted); }
+    .exp-tags { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+    .exp-tag {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.9);
+      font-size: 14px;
+      font-weight: 500;
+      padding: 8px 18px;
+      border-radius: 6px;
+    }
+
+    /* --- CREDENTIALS --- */
+    .credentials { background: var(--white); padding: 64px 2rem; }
+    .cred-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
+    .cred-card { background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; padding: 20px; }
+    .cred-name { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .cred-org { font-size: 13px; color: var(--lgray); }
+
+    /* --- CONTACT --- */
+    .contact { background: var(--navy); padding: 64px 2rem; }
+    .contact .section-title { color: var(--white); }
+    .contact .section-label { color: var(--muted); }
+    .contact .section-rule { background: var(--muted); }
+    .contact-sub { color: rgba(255,255,255,0.78); font-size: 16px; margin-bottom: 32px; max-width: 600px; }
+    .contact-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+    .contact-details { display: flex; flex-wrap: wrap; gap: 24px; }
+    .contact-item { color: rgba(255,255,255,0.75); font-size: 15px; }
+    .contact-item strong { color: var(--white); display: block; margin-bottom: 4px; }
+
+    /* --- FOOTER --- */
+    footer { background: #0a1a2e; color: rgba(255,255,255,0.45); text-align: center; padding: 20px; font-size: 13px; }
+
+    /* --- MOBILE RESPONSIVE --- */
+    @media (max-width: 640px) {
+
+      /* Nav */
+      nav { padding: 0 1rem; height: 52px; }
+      .nav-brand { font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 12px; }
+
+      /* Hero */
+      .hero { padding: 40px 1rem 0; }
+      .hero-eyebrow { font-size: 11px; letter-spacing: 1px; }
+      .hero-content h1 { font-size: 28px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+      .hero-sub { font-size: 14px; margin-bottom: 16px; }
+      .cred-row { gap: 6px; margin-bottom: 20px; }
+      .pill { font-size: 11px; padding: 4px 10px; }
+      .hero-btns { flex-direction: column; gap: 10px; margin-bottom: 20px; }
+      .btn-primary, .btn-outline { text-align: center; padding: 11px 20px; font-size: 14px; }
+
+      /* Conveyor — hide forklift on mobile, simplify */
+      .forklift-icon { display: none; }
+      .scan-line { display: none; }
+      .conveyor-wrapper { height: 60px; }
+
+      /* Stats bar */
+      .stats-inner { flex-wrap: wrap; }
+      .stat-item { flex: 1 1 45%; padding: 18px 10px; min-width: 0; }
+      .stat-num { font-size: 22px; }
+      .stat-label { font-size: 10px; }
+
+      /* Sections */
+      section { padding: 40px 1rem; }
+      .section-title { font-size: 22px; }
+      .section-label { font-size: 12px; }
+
+      /* Achievements grid — single column */
+      .ach-grid { grid-template-columns: 1fr; gap: 16px; }
+      .ach-card { padding: 20px 16px; }
+      .ach-number { font-size: 30px; }
+
+      /* About */
+      .about { padding: 40px 1rem; }
+      .about p { font-size: 15px; }
+
+      /* Experience — stack meta above content */
+      .exp-item { flex-direction: column; gap: 8px; padding: 24px 0; }
+      .exp-meta { min-width: unset; }
+      .exp-title { font-size: 15px; }
+      .exp-desc { font-size: 14px; }
+
+      /* Expertise — 2 column grid instead of free-flow wrap */
+      .exp-tags { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+      .exp-tag { font-size: 12px; padding: 7px 10px; text-align: center; }
+
+      /* Credentials */
+      .cred-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .cred-card { padding: 14px; }
+      .cred-name { font-size: 13px; }
+      .cred-org { font-size: 11px; }
+
+      /* Contact */
+      .contact { padding: 40px 1rem; }
+      .contact-btns { flex-direction: column; gap: 10px; }
+      .contact-details { flex-direction: column; gap: 16px; }
+      .contact-sub { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <span class="nav-brand">Jordan Smith III</span>
+    <div class="nav-links">
+      <a href="#achievements">Impact</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Engineering Executive &nbsp;&middot;&nbsp; Amazon Global Engineering Services</p>
+      <h1>Jordan Smith III</h1>
+      <p class="hero-sub">VP of Engineering &amp; Operations &nbsp;&middot;&nbsp; $1.5B+ MHE Capital Portfolio</p>
+      <div class="cred-row">
+        <span class="pill">PE</span>
+        <span class="pill">PMP</span>
+        <span class="pill">MBA</span>
+        <span class="pill">Cornell Executive Leadership</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Get in Touch</a>
+        <a href="Jordan_Smith_III_Executive_Brief.pdf" download class="btn-outline">Download Executive Brief</a>
+      </div>
+
+      <!-- CONVEYOR ANIMATION -->
+      <div class="conveyor-wrapper">
+        <div class="conveyor-belt">
+          <div class="packages-track">
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-tall"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg pkg-wide"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+            <div class="pkg"><div class="pkg-box"><div class="pkg-label"></div></div></div>
+          </div>
+          <div class="scan-line"></div>
+          <div class="forklift-icon">&#x1F69C;</div>
+          <div class="belt-surface"></div>
+          <div class="belt-rollers"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <span class="stat-num">$1.5B+</span>
+        <span class="stat-label">MHE Capital Portfolio</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">291</span>
+        <span class="stat-label">Facilities</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">$2B+</span>
+        <span class="stat-label">Annual Throughput</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">17 Yrs</span>
+        <span class="stat-label">Engineering Leadership</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- IMPACT METRICS -->
+  <section class="achievements" id="achievements">
+    <div class="section-inner">
+      <p class="section-label">Proven Impact</p>
+      <h2 class="section-title">Results that move the needle</h2>
+      <div class="section-rule"></div>
+      <div class="ach-grid">
+
+        <div class="ach-card">
+          <div class="ach-number">$2.7M</div>
+          <div class="ach-title">Vendor Accountability</div>
+          <div class="ach-desc">Built and institutionalized a supplier performance management program across 270+ facilities. Drove a 70% reduction in repeat vendor failures, delivering $2.7M in projected annual savings and establishing lasting contractual accountability standards.</div>
+        </div>
+
+        <div class="ach-card">
+          <div class="ach-number">91%</div>
+          <div class="ach-title">On-Time Delivery</div>
+          <div class="ach-desc">Directed simultaneous execution of an 11-site capital launch portfolio valued at $18M+, elevating regional on-time delivery from 85% to 91% &mdash; including a greenfield flagship facility at $264M with no established operational playbook.</div>
+        </div>
+
+        <div class="ach-card">
+          <div class="ach-number">$45M+</div>
+          <div class="ach-title">Cost Avoidance</div>
+          <div class="ach-desc">Identified and corrected a systemic engineering design assumption through rigorous empirical validation. Rewrote specifications that generated $9M in immediate savings and $36M+ in projected cost avoidance across future capital programs.</div>
+        </div>
+
+        <div class="ach-card">
+          <div class="ach-number">15 Sites</div>
+          <div class="ach-title">Performance Turnaround</div>
+          <div class="ach-desc">Designed and deployed a regional performance recovery framework targeting underperforming automated fulfillment operations. Achieved measurable throughput improvement across all 15 sites, with each location exceeding baseline targets by 5% or more within 90 days.</div>
+        </div>
+
+        <div class="ach-card">
+          <div class="ach-number">100%</div>
+          <div class="ach-title">Operational Excellence Adoption</div>
+          <div class="ach-desc">Architected and scaled a cross-functional launch readiness framework from pilot to full North American adoption. Standardized handoff protocols now govern 300+ active deliverables, reducing launch variability and accelerating time-to-operational-readiness.</div>
+        </div>
+
+        <div class="ach-card">
+          <div class="ach-number">10</div>
+          <div class="ach-title">Leaders Promoted</div>
+          <div class="ach-desc">Built high-performance engineering organizations through disciplined hiring, structured development, and intentional succession planning. Drove 10 promotions in 2.5 years with 35% diverse representation, consistently exceeding organizational benchmarks.</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="section-inner">
+      <p class="section-label">About</p>
+      <h2 class="section-title">I build engineering organizations<br>that solve problems other teams can't.</h2>
+      <div class="section-rule"></div>
+      <p>Over 17 years, I've led capital programs totaling $1.5B+ in automated material handling infrastructure, stood up teams from scratch, and created frameworks that became permanent standard work across some of the most complex fulfillment environments in North America.</p>
+      <p>At Amazon, I lead the Tiger Team within Global Engineering Services &mdash; a specialized cross-functional engineering organization that addresses systemic performance gaps in facilities representing $100M&ndash;$1B+ in capital investment.</p>
+      <p>I maintain direct OPEX accountability of ~$3.5M in personnel costs alongside my capital portfolio, coordinating across 50+ organizations and influencing stakeholders from Director through VP level. My work consistently produces frameworks that outlast individual projects and scale across enterprise networks.</p>
+      <p>I'm now seeking a VP-level platform with full P&amp;L accountability, broader organizational scope, and equity participation &mdash; in fulfillment, logistics, industrial automation, or MHE systems integration.</p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="section-inner">
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">Career progression</h2>
+      <div class="section-rule"></div>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-dates">Aug 2025 &ndash; Present</div>
+            <div class="exp-company">Amazon Global Engineering Services &nbsp;&nbsp; Cincinnati, OH</div>
+          </div>
+          <div>
+            <div class="exp-title">Senior Manager, Tiger Team</div>
+            <div class="exp-desc">Lead cross-functional Tiger Team engineering organization addressing systemic performance failures in Amazon's highest-complexity fulfillment facilities. Direct accountability for $3.5M OPEX and influence across $1B+ capital programs. Drive strategy across 50+ internal organizations.</div>
+            <div class="exp-wins">
+              <span class="win-tag">$1.5B+ Capital Portfolio</span>
+              <span class="win-tag">Tiger Team Lead</span>
+              <span class="win-tag">50+ Organizations</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-dates">2022 &ndash; Aug 2025</div>
+            <div class="exp-company">Amazon &nbsp;&nbsp; Multiple Sites</div>
+          </div>
+          <div>
+            <div class="exp-title">Senior Program Manager, Launch &amp; Expansion</div>
+            <div class="exp-desc">Directed simultaneous launch of 11 capital facilities ($18M+ portfolio), establishing regional on-time delivery benchmarks. Led greenfield $264M flagship launch with no prior operational playbook. Built supplier accountability program eliminating $2.7M in repeat failure costs.</div>
+            <div class="exp-wins">
+              <span class="win-tag">91% On-Time</span>
+              <span class="win-tag">$264M Flagship</span>
+              <span class="win-tag">$2.7M Savings</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-dates">2018 &ndash; 2022</div>
+            <div class="exp-company">Duke Energy &nbsp;&nbsp; Charlotte, NC</div>
+          </div>
+          <div>
+            <div class="exp-title">Capital Project Manager / Engineering Manager</div>
+            <div class="exp-desc">Led 45-person team managing a station's $75M annual budget. Delivered $182M in revenue loss avoidance across parallel capital improvement programs. Managed engineering design validation that generated $9M in immediate savings and $36M+ in long-term cost avoidance.</div>
+            <div class="exp-wins">
+              <span class="win-tag">$75M Budget</span>
+              <span class="win-tag">$182M Avoidance</span>
+              <span class="win-tag">45-Person Team</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-meta">
+            <div class="exp-dates">2009 &ndash; 2018</div>
+            <div class="exp-company">Various &nbsp;&nbsp; National</div>
+          </div>
+          <div>
+            <div class="exp-title">Engineering Leadership &mdash; Early Career</div>
+            <div class="exp-desc">Progressed through engineering leadership roles in utilities, industrial operations, and infrastructure. Built core competencies in capital project delivery, team development, and operational systems design. PE licensed across multiple states.</div>
+            <div class="exp-wins">
+              <span class="win-tag">PE Licensed</span>
+              <span class="win-tag">Multi-state</span>
+              <span class="win-tag">Capital Delivery</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="expertise" id="expertise">
+    <div class="section-inner">
+      <p class="section-label">Core Expertise</p>
+      <h2 class="section-title">Where I create value</h2>
+      <div class="section-rule"></div>
+      <div class="exp-tags">
+        <span class="exp-tag">Material Handling Engineering (MHE)</span>
+        <span class="exp-tag">Capital Program Management ($1B+)</span>
+        <span class="exp-tag">Automated Sortation &amp; Conveyor Systems</span>
+        <span class="exp-tag">Fulfillment &amp; Distribution Operations</span>
+        <span class="exp-tag">Cross-functional Team Leadership</span>
+        <span class="exp-tag">Supplier &amp; Vendor Management</span>
+        <span class="exp-tag">Greenfield Facility Launch</span>
+        <span class="exp-tag">P&amp;L / OPEX Accountability</span>
+        <span class="exp-tag">Industrial Automation</span>
+        <span class="exp-tag">Operational Excellence / Lean</span>
+        <span class="exp-tag">Stakeholder Influence (VP/Director Level)</span>
+        <span class="exp-tag">Engineering Org Design &amp; Talent Development</span>
+        <span class="exp-tag">Risk Identification &amp; Mitigation</span>
+        <span class="exp-tag">Six Sigma / Process Engineering</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="credentials" id="credentials">
+    <div class="section-inner">
+      <p class="section-label">Credentials</p>
+      <h2 class="section-title">Education &amp; Certifications</h2>
+      <div class="section-rule"></div>
+      <div class="cred-grid">
+        <div class="cred-card">
+          <div class="cred-name">Professional Engineer (PE)</div>
+          <div class="cred-org">Licensed &mdash; Multiple States</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-name">Project Management Professional (PMP)</div>
+          <div class="cred-org">Project Management Institute</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-name">MBA</div>
+          <div class="cred-org">Business Administration</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-name">Executive Leadership Program</div>
+          <div class="cred-org">Cornell University</div>
+        </div>
+        <div class="cred-card">
+          <div class="cred-name">B.S. Mechanical Engineering</div>
+          <div class="cred-org">Engineering Foundation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="section-inner">
+      <p class="section-label">Let's Connect</p>
+      <h2 class="section-title">Open to VP-level conversations</h2>
+      <div class="section-rule"></div>
+      <p class="contact-sub">Targeting VP of Engineering and VP of Operations roles in fulfillment, logistics, industrial automation, and MHE systems integration. Available nationally for remote and hybrid roles. On-site within Greater Cincinnati area.</p>
+      <div class="contact-btns">
+        <a href="mailto:jordan.smith.3rd@gmail.com" class="btn-primary">Send an Email</a>
+        <a href="https://www.linkedin.com/in/jordansmith3rd/" target="_blank" class="btn-outline">Connect on LinkedIn</a>
+        <a href="Jordan_Smith_III_Executive_Brief.pdf" download class="btn-outline">Download Executive Brief</a>
+      </div>
+      <div class="contact-details">
+        <div class="contact-item">
+          <strong>Email</strong>
+          jordan.smith.3rd@gmail.com
+        </div>
+        <div class="contact-item">
+          <strong>Location</strong>
+          Cincinnati, OH
+        </div>
+        <div class="contact-item">
+          <strong>Compensation Target</strong>
+          $300K&ndash;$400K with equity
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2026 Jordan Smith III &nbsp;&middot;&nbsp; jordansmith3rd.com
+  </footer>
+
+</body>
+</html>
